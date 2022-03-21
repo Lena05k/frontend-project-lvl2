@@ -21,6 +21,17 @@
   },
   "homepage": "https://github.com/Lena05k/frontend-project-lvl2#readme",
   "dependencies": {
-    "commander": "^9.0.0"
+    "commander": "^9.0.0",
+    "eslint-plugin-import": "^2.25.4",
+    "file-system": "^2.2.2",
+    "fs": "^0.0.1-security",
+    "lodash": "^4.17.21",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "eslint": "^8.11.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-react": "^7.29.4"
   }
 }
