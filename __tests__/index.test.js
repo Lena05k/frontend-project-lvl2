@@ -14,5 +14,5 @@ const expected =
     }`;
 
 test('genDiff', () => {
-    expect(genDiff( filepath1, filepath2 )).toEqual(expected);
+    expect(() => genDiff( filepath1, filepath2 )).toThrow(expected);
 });

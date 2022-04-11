@@ -13,14 +13,14 @@ jobs:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
         with:
-          node-version: '16.x'
+          node-version: '14.x'
       - run: make install
       - run: make test
       - run: make lint
       - name: code coverage
         uses: paambaati/codeclimate-action@v3.0.0
         env:
-          TEST_COVERAGE_ID: ${{ secrets.TEST_COVERAGE_ID }}
+          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
         with:
           coverageCommand: make test-coverage
           debug: true
