@@ -1,29 +1,26 @@
 name: Node CI
 
+
 on:
-  - push
+  push:
+    branches:
+      - main
 
 jobs:
- build:
-   runs-on: ubuntu-latest
-   steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js '16.x'
-        uses: actions/setup-node@v1
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
         with:
           node-version: '16.x'
-      - name: npm install
-        run: |
-          make install
-        env:
-          CI: true
-      - name: Run linter
-        run: |
-          make lint
-       - name: Test & publish code coverage
-         uses: paambaati/codeclimate-action@v3
-         env:
-           TEST_COVERAGE_ID: ${{ secrets.TEST_COVERAGE_ID }}
-         with:
-           coverageCommand: make test-coverage
-           debug: true
+      - run: make install
+      - run: make test
+      - run: make lint
+      - name: code coverage
+        uses: paambaati/codeclimate-action@v3
+          env:
+            TEST_COVERAGE_ID: ${{ secrets.TEST_COVERAGE_ID }}
+          with:
+            coverageCommand: make test-coverage
+            debug: true
