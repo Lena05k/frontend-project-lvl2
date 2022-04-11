@@ -25,6 +25,7 @@
     "eslint-plugin-import": "^2.25.4",
     "file-system": "^2.2.2",
     "fs": "^0.0.1-security",
+    "jest-watch-typeahead": "^1.0.0",
     "lodash": "^4.17.21",
     "path": "^0.12.7",
     "process": "^0.11.10",

@@ -3,7 +3,8 @@ import {getFixturePath} from "../src/test-file-path.js";
 
 const filepath1 = getFixturePath('file1.json');
 const filepath2 = getFixturePath('file2.json');
-const expected = `{
+const expected =
+    `{
       - follow: false
         host: hexlet.io
       - proxy: 123.234.53.22
@@ -13,5 +14,5 @@ const expected = `{
     }`;
 
 test('genDiff', () => {
-    expect(genDiff(filepath1, filepath2)).toEqual(expected);
+    expect(genDiff( filepath1, filepath2 )).toEqual(expected);
 });
