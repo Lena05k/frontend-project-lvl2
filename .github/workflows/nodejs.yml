@@ -18,7 +18,7 @@ jobs:
       - run: make test
       - run: make lint
       - name: code coverage
-        uses: paambaati/codeclimate-action@v3
+        uses: paambaati/codeclimate-action@v3.0.0
         env:
           TEST_COVERAGE_ID: ${{ secrets.TEST_COVERAGE_ID }}
         with:
