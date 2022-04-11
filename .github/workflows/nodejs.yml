@@ -19,8 +19,8 @@ jobs:
       - run: make lint
       - name: code coverage
         uses: paambaati/codeclimate-action@v3
-          env:
-            TEST_COVERAGE_ID: ${{ secrets.TEST_COVERAGE_ID }}
-          with:
-            coverageCommand: make test-coverage
-            debug: true
+        env:
+          TEST_COVERAGE_ID: ${{ secrets.TEST_COVERAGE_ID }}
+        with:
+          coverageCommand: make test-coverage
+          debug: true
