@@ -11,7 +11,5 @@ program
   .option('-f, --format [type]', 'output format')
   .arguments('<filepath1>')
   .arguments('<filepath2>')
-  .action((filepath1, filepath2) => {
-    return genDiff(filepath1, filepath2);
-  });
+  .action((filepath1, filepath2) => genDiff(filepath1, filepath2));
 program.parse(process.argv);
