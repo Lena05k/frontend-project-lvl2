@@ -1,7 +1,6 @@
 import genDiff from '../src/index.js';
-import {getFixturePath} from "../src/test-file-path.js";
 
-const filepath1 ='./__fixtures__/file1.json';
+const filepath1 = './__fixtures__/file1.json';
 const filepath2 = './__fixtures__/file2.json';
 const result = `{
   - follow: false
@@ -13,5 +12,5 @@ const result = `{
 }`;
 
 test('genDiff', () => {
-    expect(genDiff( filepath1, filepath2 )).toBe(result);
+  expect(genDiff(filepath1, filepath2)).toBe(result);
 });
