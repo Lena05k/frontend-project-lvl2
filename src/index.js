@@ -1,7 +1,7 @@
 import { readFileSync } from 'fs';
 import { resolve, extname } from 'path';
 import _ from 'lodash';
-import parseFile from "./parse.js";
+import parseFile from './parse.js';
 
 const genDiff = (filePath1, filePath2) => {
   const extName1 = extname(filePath1);
