@@ -1,7 +1,9 @@
 import genDiff from '../src/index.js';
 
-const filepath1 = './__fixtures__/file1.json';
-const filepath2 = './__fixtures__/file2.json';
+
+// const fileYaml1 = './__fixtures__/file1.yml';
+// const fileYaml2 = './__fixtures__/file2.yml';
+
 const result = `{
   - follow: false
     host: hexlet.io
@@ -11,6 +13,11 @@ const result = `{
   + verbose: true
 }`;
 
-test('genDiff', () => {
-  expect(genDiff(filepath1, filepath2)).toBe(result);
+test('genDiff JSON', () => {
+  const filepath1 = './__fixtures__/file1.json';
+  const filepath2 = './__fixtures__/file2.json';
+  expect(genDiff(filepath1, filepath2)).toEqual(result);
 });
+// test('genDiff YAML', () => {
+//   expect(genDiff(fileYaml1, fileYaml2)).toBe(result);
+// });
