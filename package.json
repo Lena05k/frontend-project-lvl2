@@ -17,7 +17,15 @@
     "url": "https://github.com/Lena05k/frontend-project-lvl2/issues"
   },
   "homepage": "https://github.com/Lena05k/frontend-project-lvl2#readme",
+  "bin": {
+    "gendiff": "bin/gendiff.js"
+  },
   "dependencies": {
+    "commander": "^9.4.1",
+    "js-yaml": "^4.1.0",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
     "eslint": "^8.27.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.26.0",
