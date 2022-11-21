@@ -1,20 +1,20 @@
 import _ from 'lodash';
 
 const stepIndent = 4;
-const getIndex = (count) => ' '.repeat(count * stepIndent);
+const getIndent = (count) => ' '.repeat(count * stepIndent);
 
 const getValue = (node, depth) => {
   if (!_.isObject(node)) {
     return node;
   }
-  const bracketEndIndent = getIndex(depth - 1);
+  const bracketEndIndent = getIndent(depth - 1);
   const lines = Object.entries(node).map(([key, value]) => `${getIndent(depth)}${key}: ${getValue(value, depth + 1)}`);
 
   return ['{', ...lines, `${bracketEndIndent}}`].join('\n');
 };
 
 const stylish = (data, depth = 1) => {
-  const indent = getIndex(depth).slice(0, getIndex(depth) - 2);
+  const indent = getIndent(depth).slice(0, getIndent(depth) - 2);
   const bracketEndIndent = getIndent(depth - 1);
 
   const lines = data.flatMap((diff) => {
