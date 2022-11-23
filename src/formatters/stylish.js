@@ -10,7 +10,11 @@ const getValue = (node, depth) => {
   const bracketEndIndent = getIndent(depth - 1);
   const lines = Object.entries(node).map(([key, value]) => `${getIndent(depth)}${key}: ${getValue(value, depth + 1)}`);
 
-  return ['{', ...lines, `${bracketEndIndent}}`].join('\n');
+  return [
+    '{',
+    ...lines,
+    `${bracketEndIndent}}`,
+  ].join('\n');
 };
 
 const stylish = (data, depth = 1) => {
@@ -36,8 +40,12 @@ const stylish = (data, depth = 1) => {
         throw new Error(`Unknown type of data: ${diff.type}`);
     }
   });
+
   return [
-    '{', ...lines, `${bracketEndIndent}}`].join('\n');
+    '{',
+    ...lines,
+    `${bracketEndIndent}}`,
+  ].join('\n');
 };
 
 export default stylish;
