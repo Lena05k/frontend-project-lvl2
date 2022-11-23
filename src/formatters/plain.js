@@ -10,7 +10,7 @@ const getFormattedValue = (value) => {
   return value;
 };
 
-const stylish = (tree) => {
+export default (tree) => {
   const iter = (node, path) => {
     const lines = node
       .map((diff) => {
@@ -31,9 +31,10 @@ const stylish = (tree) => {
             throw new Error(`Unknown type of diff: ${diff.type}`);
         }
       });
-    return [...lines].filter(Boolean).join('\n');
+
+    return [...lines].filter(Boolean)
+      .join('\n');
   };
+
   return iter(tree, '');
 };
-
-export default stylish;
