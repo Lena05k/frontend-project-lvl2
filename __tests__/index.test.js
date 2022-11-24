@@ -10,7 +10,7 @@ const readFile = (filepath) => readFileSync(getFixturePath(filepath), 'utf-8').t
 
 test.each([
   ['file1.json', 'file2.json', 'stylish'],
-  ['file1.yml', 'file2.yml'],
+  ['file1.yml', 'file2.yml', 'stylish'],
   ['file1.json', 'file2.json', 'plain'],
   ['file1.yml', 'file2.yml', 'plain'],
   ['file1.json', 'file2.json', 'json'],
