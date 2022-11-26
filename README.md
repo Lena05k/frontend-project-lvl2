@@ -85,13 +85,13 @@ Specify the directory: ```./__fixtures__/file2.json```, ```./__fixtures__/file1.
 
 Example: ```gendiff ./__fixtures__/file1.json ./__fixtures__/file2.json```
 
-#### Style:
+### Style:
 Difference generator after implementation returns the difference in one of the three styles.
 * ```'stylish'``` - when the comparison is made line by line and all the differences between the first file and the second will be marked with "+" or "-".
 * ```'plain'``` - a text description of the attributes in the format of what was added/changed/deleted and where.
 * ```'json'``` - translation of the difference between files in JSON format.
 
-#### Launch
+### Launch:
 By default, the output style is 'stylish', so the two call options listed below are equivalent:
 ```sh
 gendiff ./__fixtures__/file1.json ./__fixtures__/file2.json
