@@ -123,7 +123,7 @@ gendiff -f json ./__fixtures__/file1.json ./__fixtures__/file2.json
 
 </details>
 
-### Run tests:
+## Run tests:
 
 1. Run linter:
 ```sh 
