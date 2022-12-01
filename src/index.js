@@ -4,7 +4,7 @@ import parse from './parsers.js';
 import buildDiff from './buildDiff.js';
 import format from './formatters/index.js';
 
-const getData = (filePath) => readFileSync(path.resolve(`${process}`, filePath));
+const getData = (filePath) => readFileSync(path.resolve(process.cwd(), filePath));
 const getFormat = (filePath) => path.extname(filePath).slice(1);
 
 const genDiff = (filepath1, filepath2, formatName = 'stylish') => {
