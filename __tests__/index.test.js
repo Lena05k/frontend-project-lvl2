@@ -8,16 +8,16 @@ const __dirname = path.dirname(__filename);
 const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', filename);
 const readFile = (filepath) => readFileSync(getFixturePath(filepath), 'utf-8').trim();
 
-test.each([
-  ['file1.json', 'file2.json', 'result/result_stylish.txt', 'stylish'],
-  ['file1.yml', 'file2.yml', 'result/result_stylish.txt', 'stylish'],
-  ['file1.json', 'file2.json', 'result/result_plain.txt', 'plain'],
-  ['file1.yml', 'file2.yml', 'result/result_plain.txt', 'plain'],
-  ['file1.json', 'file2.json', 'result/result_json.txt', 'json'],
-  ['file1.yml', 'file2.yml', 'result/result_json.txt', 'json'],
-])('genDiff-tests(%#)', (file1, file2, resultFileName, format = 'stylish') => {
-  const result = genDiff(getFixturePath(file1), getFixturePath(file2), format);
-  expect(result).toEqual(readFile(resultFileName));
+const resultStylish = readFile('result/result_stylish.txt');
+const resultPlain = readFile('result/result_plain.txt');
+const resultJson = readFile('result/result_json.txt');
+test.each(['json', 'yml'])('genDiff-tests(%#)', (format) => {
+  const fileName1 = `${process.cwd()}/__fixtures__/file1.${format}`;
+  const fileName2 = `${process.cwd()}/__fixtures__/file2.${format}`;
+  expect(genDiff(fileName1, fileName2)).toEqual(resultStylish);
+  expect(genDiff(fileName1, fileName2, 'stylish')).toEqual(resultStylish);
+  expect(genDiff(fileName1, fileName2, 'plain')).toEqual(resultPlain);
+  expect(genDiff(fileName1, fileName2, 'json')).toEqual(resultJson);
 });
 
 test('Formater', () => {
