@@ -11,17 +11,12 @@ const readFile = (filepath) => readFileSync(getFixturePath(filepath), 'utf-8').t
 const resultStylish = readFile('result/result_stylish.txt');
 const resultPlain = readFile('result/result_plain.txt');
 const resultJson = readFile('result/result_json.txt');
+
 test.each(['json', 'yml'])('genDiff-tests(%#)', (format) => {
-  const fileName1 = `${process.cwd()}/__fixtures__/file1.${format}`;
-  const fileName2 = `${process.cwd()}/__fixtures__/file2.${format}`;
+  const fileName1 = getFixturePath(`file1.${format}`);
+  const fileName2 = getFixturePath(`file2.${format}`);
   expect(genDiff(fileName1, fileName2)).toEqual(resultStylish);
   expect(genDiff(fileName1, fileName2, 'stylish')).toEqual(resultStylish);
   expect(genDiff(fileName1, fileName2, 'plain')).toEqual(resultPlain);
   expect(genDiff(fileName1, fileName2, 'json')).toEqual(resultJson);
-});
-
-test('Formater', () => {
-  const expected = readFile('result/result_stylish.txt');
-  const actual = genDiff(getFixturePath('file1.json'), getFixturePath('file2.yml'));
-  expect(actual).toEqual(expected);
 });
