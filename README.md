@@ -7,9 +7,6 @@
 
 ## Project Description
 **Difference generator** is a cli program. It compares two configuration files and shows a difference.
-```
- Tech stack: JavaScript, Node.js, ESLint, GitHub Actions (CI), Jest, Lodash, commander.js
-```
 
 ### Utility features:
 * Support for different input formats: yaml, json.
