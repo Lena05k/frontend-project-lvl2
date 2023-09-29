@@ -6,7 +6,17 @@
 # Difference Calculator
 
 ## Project Description
-**Difference generator** is a cli program. It compares two configuration files and shows a difference.
+**Difference generator** is a cli program. It compares two configuration files and shows a difference. Command-line utility for comparing differences between two data structures (JSON or YAML format files).
+## Acquired Skills
+- Practice of test-driven development (TDD), writing automated tests for the project using Jest
+- Integration of third-party libraries to solve various tasks
+- Implementation of package's ability to work as a library
+- Working with higher-order functions
+- Building internal representation for tree-like structures
+- Recursive traversal of tree-like structures
+- Hierarchical design, identifying the right abstractions, moving side effects to the top level.
+
+*Technology Stack: JavaScript, Node.js, ESLint, GitHub Actions (CI), Jest, Lodash, commander.js*
 
 ### Utility features:
 * Support for different input formats: yaml, json.
